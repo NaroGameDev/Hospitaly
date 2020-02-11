@@ -185,7 +185,6 @@ public class GameHandler : MonoBehaviour
             npcIdentity = null,
         }
     };
-    int currPos = 0;
 
     // Start is called before the first frame update
 

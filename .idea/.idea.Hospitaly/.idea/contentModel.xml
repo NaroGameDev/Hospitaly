@@ -6,6 +6,9 @@
     <e p="D:\Projects\Unity\Hospitaly" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Prefabs" t="Include">
+          <e p="Prefabs.cs" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="GameHandler.cs" t="Include" />
           <e p="SplashScreen.cs" t="Include" />
@@ -38,6 +41,9 @@
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
+        </e>
+        <e p="Textures" t="Include">
+          <e p="Textures.cs" t="Include" />
         </e>
       </e>
       <e p="Hospitaly.sln" t="IncludeFlat" />
