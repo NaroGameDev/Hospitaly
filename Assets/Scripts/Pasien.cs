@@ -8,5 +8,7 @@ public class Pasien : MonoBehaviour
 	private string name = "";
 	[SerializeField]
 	private int age = 0;
+	[SerializeField]
+	private Disease disease;
 	
 }
