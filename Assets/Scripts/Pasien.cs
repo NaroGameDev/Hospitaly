@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Pasien : MonoBehaviour
 {
@@ -11,4 +9,9 @@ public class Pasien : MonoBehaviour
 	[SerializeField]
 	private Disease disease;
 	
+	private void Start()
+	{
+		Debug.Log(DataParser.Instance.CountDataLine);
+	}
+
 }

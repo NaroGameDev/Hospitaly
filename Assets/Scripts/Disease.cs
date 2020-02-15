@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-public class Disease
+﻿public class Disease
 {
 	#region Attribute
 	private string name = "";

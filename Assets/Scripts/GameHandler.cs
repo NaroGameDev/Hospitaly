@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class QueueList
@@ -13,7 +12,7 @@ public class GameHandler : MonoBehaviour
 {
 
     public GameObject cubeRed, cubeGreen;
-    IList<QueueList> queuePos = new List<QueueList>()
+    private IList<QueueList> queuePos = new List<QueueList>()
     {
         // Queue position 1
         new QueueList()
@@ -188,7 +187,7 @@ public class GameHandler : MonoBehaviour
 
     // Start is called before the first frame update
 
-    void Start()
+    private void Start()
     {
         foreach(var pos in queuePos)
         {
@@ -196,7 +195,7 @@ public class GameHandler : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
     }
 
