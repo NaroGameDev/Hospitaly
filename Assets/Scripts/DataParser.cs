@@ -44,10 +44,10 @@ public class DataParser : MonoBehaviour
   {
 		if(row < listDiseases.Count)
     {
-			if(coloumn < listDiseases[row].ColoumnCount)
-			{
-				return listDiseases[row].GetColoumn(coloumn);
-			}
+			//if(coloumn < listDiseases[row].ColoumnCount)
+			//{
+			//	return listDiseases[row].GetColoumn(coloumn);
+			//}
     }
     return "";
   }
@@ -61,13 +61,14 @@ public class DataParser : MonoBehaviour
 	}
 
 	// Membaca File txt
-	public void LoadDataText(string fileName)
+	public void LoadDataText(string fileName, int[] lineToSkip)
   {
 		// Memuat File
 		if(File.Exists(csvFilesDir + fileName + ".txt"))
 		{
 			string file = csvFilesDir + fileName + ".txt";
 			string line;
+			int index = 0;
 			StreamReader r = new StreamReader(file);
 			using (r)
 			{
@@ -76,16 +77,21 @@ public class DataParser : MonoBehaviour
 					line = r.ReadLine();
 					if (line != null)
 					{
-						List<string> tempList = new List<string>();
-						string[] tempValue = line.Split(',');
-						for(int i = 0; i < tempValue.Length; i++)
+						//if(!line[0].Equals('#'))
+						if(!lineToSkip.Contains(index))
 						{
-							tempList.Add(tempValue[i]);
+							List<string> tempList = new List<string>();
+							string[] tempValue = line.Split(',');
+							for (int i = 0; i < tempValue.Length; i++)
+							{
+								tempList.Add(tempValue[i]);
+							}
+							string[] lineValue = tempList.ToArray();
+							Disease lineEntry = new Disease(lineValue);
+							listDiseases.Add(lineEntry);
 						}
-						string[] lineValue = tempList.ToArray();
-						Disease lineEntry = new Disease(lineValue);
-						listDiseases.Add(lineEntry);
 					}
+					index++;
 				} while (line != null);
 				r.Close();
 			}

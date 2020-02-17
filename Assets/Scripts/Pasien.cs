@@ -9,9 +9,4 @@ public class Pasien : MonoBehaviour
 	[SerializeField]
 	private Disease disease;
 	
-	private void Start()
-	{
-		Debug.Log(DataParser.Instance.CountDataLine);
-	}
-
 }
